@@ -1,5 +1,3 @@
-
-
 resource "azurerm_resource_group" "example" {
   name     = "example-resources"
   location = "West Europe"
@@ -42,18 +40,18 @@ resource "azurerm_linux_virtual_machine" "example" {
   network_interface_ids = [
     azurerm_network_interface.example.id,
   ]
-}
 
   
 
- # os_disk {
-  #  caching              = "ReadWrite"
-   # storage_account_type = "Standard_LRS"
-  #}
+  os_disk {
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+  }
 
   source_image_reference {
     publisher = "Canonical"
-    offer     = "rh_rhel_7_latest"
-    sku       = "rhel_7_9_sku"
+    offer     = "RHEL"
+    sku       = "7-LVM"
     version   = "latest"
   }
+}
