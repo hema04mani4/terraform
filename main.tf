@@ -50,7 +50,7 @@ resource "azurerm_linux_virtual_machine" "example" {
 
   source_image_reference {
     publisher = "Canonical"
-    offer     = "rh-rhelL"
+    offer     = "rh-rhel"
     sku       = "rh-rhel7"
     version   = "latest"
   }
