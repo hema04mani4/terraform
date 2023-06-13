@@ -1,3 +1,5 @@
+
+
 resource "azurerm_resource_group" "example" {
   name     = "example-resources"
   location = "West Europe"
@@ -30,7 +32,7 @@ resource "azurerm_network_interface" "example" {
 }
 
 resource "azurerm_linux_virtual_machine" "example" {
-  name                = "example-machine"
+  name                = "example-machine-rhel7"
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
   size                = "Standard_F2"
@@ -50,8 +52,7 @@ resource "azurerm_linux_virtual_machine" "example" {
 
   source_image_reference {
     publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-focal"
-    sku       = "20_04-lts"
+    offer     = "rh_rhel_7_latest"
+    sku       = "rhel_7_9_sku"
     version   = "latest"
   }
-}
