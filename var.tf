@@ -1,4 +1,4 @@
-variable "rgname1" {
+variable "resource_group_name" {
     default = "example-resources"
 }
 variable "rglocation1" {
