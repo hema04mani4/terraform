@@ -1,9 +1,10 @@
 
 resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
+  name     = var.resource_group_name
+  location = var.resource_group_location
+}
+  resource "azurerm_resource_group" "example2" {
+  name     = "example-resources2"
   location = "West Europe"
-  tags = {
-        terraform_managed = true
-        terraform_created = true
   }
 }
